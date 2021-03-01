@@ -22,6 +22,12 @@ Route::get('/', 'PageController@index')->name('hompage');
 Route::get('about', 'PageController@about')->name('about');
 Route::get('contacts', 'PageController@contacts')->name('contacts');
 
+/* ------ Blog scetion -----------*/
+Route::get('blog','PostController@index')->name('blog');
+
+/* ----Per mostrare il singolo post ---*/
+Route::get('blog/{post}','PostController@show');//questo farà riferimento ad un PostController che non è quello dell'Admin
+
 Auth::routes(['register' => false]);//disabilitiamo il modulo - register dopo aver creato un utente admin
 
 //Route::get('/home', 'HomeController@index')->name('home')->middleware('auth');
