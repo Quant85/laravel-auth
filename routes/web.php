@@ -21,7 +21,8 @@ Route::get('/', function () {
 Route::get('/', 'PageController@index')->name('hompage');
 Route::get('about', 'PageController@about')->name('about');
 Route::get('contacts', 'PageController@contacts')->name('contacts');
-Auth::routes();
+
+Auth::routes(['register' => false]);//disabilitiamo il modulo - register dopo aver creato un utente admin
 
 //Route::get('/home', 'HomeController@index')->name('home')->middleware('auth');
 //Route::get('/', 'HomeController@index')->name('home'); //rota unica indipendente
