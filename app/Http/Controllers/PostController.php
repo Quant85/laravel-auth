@@ -13,4 +13,16 @@ class PostController extends Controller
         $posts = Post::latest()->get();
         return view('guests.posts.index',compact('posts'));
     }
+
+    /**
+     * Display the specified resource.
+     *
+     * @param  \App\Post  $post
+     * @return \Illuminate\Http\Response
+     */
+    public function show(Post $post)
+    {
+        //
+        return view('guests.posts.show',compact('post'));
+    }
 }
