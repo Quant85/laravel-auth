@@ -18,13 +18,13 @@ Route::get('/', function () {
 });
 
 
-Route::get('about', 'PageController@index')->name('hompage');
+Route::get('/', 'PageController@index')->name('hompage');
 Route::get('about', 'PageController@about')->name('about');
 Route::get('contacts', 'PageController@contacts')->name('contacts');
 Auth::routes();
 
 //Route::get('/home', 'HomeController@index')->name('home')->middleware('auth');
-Route::get('/home', 'HomeController@index')->name('home');
+//Route::get('/', 'HomeController@index')->name('home'); //rota unica indipendente
 
 /* ------------ */
 
