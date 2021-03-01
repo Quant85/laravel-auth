@@ -56,17 +56,16 @@
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }}
                                 </a>
-
+                                
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                                     <a class="dropdown-item" href="{{ route('logout') }}"
-                                       onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
+                                        onclick="event.preventDefault();
+                                        document.getElementById('logout-form').submit();">
                                         {{ __('Logout') }}
                                     </a>
-
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                         @csrf
-                                    </form>
+                                    </form>                                 
                                 </div>
                             </li>
                         @endguest
@@ -75,9 +74,22 @@
             </div>
         </nav>
 
-        <main class="py-4">
-            @yield('content')
-        </main>
+        <div class="container py-4">
+            <div class="row">
+                <div class="col-xs-12 col-md-3 col-lg-2">
+                    <ul class="list-unstyled">
+                        <li><a href="{{ route('admin.index')}}"><i class="fas fa-tachometer-alt"></i>Dashboard</a></li>
+                        <li><a href="{{ route('admin.posts.index')}}"><i class="fas fa-book-open"></i>Posts</a></li>
+                        <li><a href="#"><i class="fa fa-folder-open" aria-hidden="true"></i>Category</a></li>
+                        <li><a href="#"><i class="fas fa-tag fa-lg fa-fw"></i> Tags</a></li>
+                    </ul>
+                </div>
+                <main class="py-4 col-xs-12 col-md-9 col-lg-10">
+                    @yield('content')
+                </main>
+            </div>
+        </div>
+
     </div>
 </body>
 </html>
